@@ -4,7 +4,7 @@
                          
 #                        File Name     : setup.sh
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 15:50:59 CEST
+#                        Last Modified : Mo 13 Apr 2020 19:54:53 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -41,14 +41,14 @@ echo " A script to install everyhing that is needed on a new box."
 echo
 
 # Update Repos
-echo "[info] Updating Repositories ..."
+echo -e "\e[1;33m[info]\e[0m Updating Repositories ..."
 echo
 apt update &> /dev/null
 
 # Execute installation scripts
 for SCRIPT in ./scripts/*
 do
-  echo "[info] Executing ${SCRIPT} ..."
+  echo -e "\e[1;33m[info]\e[0m Executing ${SCRIPT} ..."
   /bin/bash "${SCRIPT}"
   echo
 done
