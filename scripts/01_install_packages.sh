@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 16:57:07 CEST
+#                        Last Modified : Mo 13 Apr 2020 20:21:51 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -34,12 +34,10 @@ do
   fi
 done
 
-if [ "${#ERRORS[@]}" -eq 0 ]
+if [ "${#ERRORS[@]}" -ne 0 ]
 then
-  echo "[info] No Errors"
-else
   for ERROR in "${ERRORS[@]}"
   do
-    echo "[error] ${ERROR} could not be installed"
+    echo -e "\e[1;31m[error]\e[0m ${ERROR} could not be installed"
   done
 fi
