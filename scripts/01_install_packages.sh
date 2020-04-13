@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 16:46:53 CEST
+#                        Last Modified : Mo 13 Apr 2020 16:57:07 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -21,7 +21,6 @@ STANDARD_PACKAGES=( \
   wget \
   tree \
   bat \
-  fzf \
   fd-find \
   ripgrep \
 )
