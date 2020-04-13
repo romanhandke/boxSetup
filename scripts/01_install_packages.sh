@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 15:29:38 CEST
+#                        Last Modified : Mo 13 Apr 2020 16:26:45 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -17,7 +17,6 @@
 
 # List of packages
 STANDARD_PACKAGES=( \
-  git \
   curl \
   wget \
   tree \
@@ -30,7 +29,7 @@ ERRORS=()
 
 for PACKAGE in "${STANDARD_PACKAGES[@]}"
 do
-  if [[ ! $(apt install "${PACKAGE}" &> /dev/null ) ]] 
+  if [[ ! $(apt install -y "${PACKAGE}" &> /dev/null ) ]] 
   then
     ERRORS+=("${PACKAGE}")
   fi
