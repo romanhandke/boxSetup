@@ -4,7 +4,7 @@
                          
 #                        File Name     : setup.sh
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 20:38:11 CEST
+#                        Last Modified : Mo 13 Apr 2020 20:41:36 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -36,8 +36,8 @@ fi
 clear
 
 echo "---"
-echo "BoxSetup Script"
-echo " A script to install everyhing that is needed on a new box."
+echo -e "\e[1;32mBoxSetup Script\e[0m"
+echo " Get a new box up to speed"
 echo
 
 # Update Repos
