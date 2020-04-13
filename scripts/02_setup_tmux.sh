@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 16:29:53 CEST
+#                        Last Modified : Mo 13 Apr 2020 16:50:30 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -16,10 +16,7 @@
 ################################################################################
 
 # Install tmux
-if [ ! "$(apt install -y tmux &> /dev/null)" ]
-then
-  echo "[error] Could not install tmux"
-fi
+apt install -y tmux &> /dev/null || echo "[error] Could not install tmux"
 
 # Configure tmux
 ## Get user home directory
