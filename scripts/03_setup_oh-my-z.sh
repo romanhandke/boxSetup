@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 18:03:13 CEST
+#                        Last Modified : Mo 13 Apr 2020 18:13:51 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -19,7 +19,7 @@
 ################################################################################
 
 # Install zsh
-apt install -y zsh || echo '[error] Could not install zsh'
+apt install -y zsh &> /dev/null || echo '[error] Could not install zsh'
 
 # Set zsh as default shell for the user with UID 1000
 USERNAME=$(grep 1000 /etc/passwd | awk 'BEGIN { FS = ":" } { print $1 }')
