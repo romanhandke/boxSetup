@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 18:13:51 CEST
+#                        Last Modified : Mo 13 Apr 2020 18:25:50 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -38,11 +38,11 @@ FONT_URLS=( \
 
 for FONT in "${FONT_URLS[@]}"
 do
-  su - "${USERNAME}" -c "wget -P '${FONT}' /home/${USERNAME}/.local/share/fonts/" || echo "[error] Could not install ${FONT}"
+  su - "${USERNAME}" -c "wget '${FONT}' -P /home/${USERNAME}/.local/share/fonts/" || echo "[error] Could not install ${FONT}"
 done
 
 # Install PowerLevel10k theme
-su - "${USERNAME}" -c "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k" || echo "[error] Could not install p10k theme"
+su - "${USERNAME}" -c "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/${USERNAME}/themes/powerlevel10k" || echo "[error] Could not install p10k theme"
 
 # Copy config
-cp ../configs/.zshrc /home/"${USERNAME}"/ || echo "[error] Could not copy .zshrc"
+cp ./configs/.zshrc /home/"${USERNAME}"/ || echo "[error] Could not copy .zshrc"
