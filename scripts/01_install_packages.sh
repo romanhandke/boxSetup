@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:50:24 CEST
+#                        Last Modified : Sa 18 Apr 2020 19:39:22 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -25,6 +25,7 @@ STANDARD_PACKAGES=( \
   bat \
   fd-find \
   ripgrep \
+  snapd \
   software-properties-common \
 )
 
