@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:23:58 CEST
+#                        Last Modified : Sa 18 Apr 2020 18:30:08 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -48,4 +48,14 @@ copyFileHome() {
 
 setupStep() {
   echo -e "\e[32m[install]\e[0m ${1}"
+}
+
+addRepository() {
+  info "Adding repository ${1}"
+  add-apt-repository "${1}" -y &> /dev/null || error "Could not add repository ${1}"
+}
+
+updateRepositories() {
+  info "Updating repositories"
+  apt update &> /dev/null || error "Could not update repositories"
 }

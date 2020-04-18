@@ -4,7 +4,7 @@
                          
 #                        File Name     : setup.sh
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:23:21 CEST
+#                        Last Modified : Sa 18 Apr 2020 18:35:14 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -45,9 +45,8 @@ echo " Get a new box up to speed"
 echo
 
 # Update Repos
-info "Updating Repositories"
+updateRepositories
 echo
-apt update &> /dev/null
 
 # Execute installation scripts
 for SCRIPT in ./scripts/*
