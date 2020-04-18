@@ -4,7 +4,7 @@
                          
 #                        File Name     : setup.sh
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:35:14 CEST
+#                        Last Modified : Sa 18 Apr 2020 19:10:46 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -35,6 +35,7 @@ source ./utils/functions.sh
 if [[ "${EUID}" -ne 0 ]]
 then
   usage
+  exit 1
 fi
 
 clear
