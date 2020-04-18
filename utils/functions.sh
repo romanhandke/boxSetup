@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-                        Last Modified : Sa 18 Apr 2020 18:46:40 CEST
+                        Last Modified : Sa 18 Apr 2020 18:51:13 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -44,6 +44,7 @@ installPackages() {
 }
 
 copyFileHome() {
+  info "Copying file to home directory"
   cp "${1}" "$USERHOME" || error "Could not copy ${1}"
 }
 
