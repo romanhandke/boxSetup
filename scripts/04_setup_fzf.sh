@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 20:36:54 CEST
+#                        Last Modified : Sa 18 Apr 2020 17:52:11 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -16,6 +16,8 @@
 
 ################################################################################
 
-USERNAME=$(grep 1000 /etc/passwd | awk 'BEGIN { FS = ":" } { print $1 }')
-su - "${USERNAME}" -c "git clone --depth 1 https://github.com/junegunn/fzf.git /home/${USERNAME}/.fzf"  &> /dev/null || echo -e "\e[1;31m[error]\e[0m Could not download fzf"
-su - "${USERNAME}" -c "/home/${USERNAME}/.fzf/install --key-bindings --completion --update-rc" &> /dev/null || echo -e "\e[1;31m[error]\e[0m Could not install fzf"
+# Clone FZF
+su - "${USERNAME}" -c "git clone --depth 1 https://github.com/junegunn/fzf.git ${USERHOME}.fzf"  &> /dev/null || error "Could not download fzf"
+
+# Run installation
+su - "${USERNAME}" -c "${USERHOME}.fzf/install --key-bindings --completion --update-rc" &> /dev/null || error "Could not install fzf"

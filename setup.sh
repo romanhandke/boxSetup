@@ -4,7 +4,7 @@
                          
 #                        File Name     : setup.sh
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Mo 13 Apr 2020 20:41:36 CEST
+#                        Last Modified : Sa 18 Apr 2020 17:42:16 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -15,15 +15,19 @@
 
 ################################################################################
 
+                             ##### VARIABLES #####
+
+USERNAME=$(grep 1000 /etc/passwd | awk 'BEGIN { FS = ":" } { print $1 }')
+export USERHOME="/home/${USERNAME}/"
+
+###############################################################################
+
                              ##### FUNCTIONS #####
 
-usage() {
-  echo "Usage sudo ${0}"
-  echo
-  echo "Since this script will install packages root privileges are required."
-}
+# shellcheck source=/dev/null
+source ./utils/functions.sh
 
-################################################################################
+###############################################################################
 
                                ##### SCRIPT #####
 
@@ -41,15 +45,17 @@ echo " Get a new box up to speed"
 echo
 
 # Update Repos
-echo -e "\e[1;33m[info]\e[0m Updating Repositories ..."
+info "Updating Repositories ..."
 echo
 apt update &> /dev/null
 
 # Execute installation scripts
 for SCRIPT in ./scripts/*
 do
-  echo -e "\e[1;33m[info]\e[0m Executing ${SCRIPT} ..."
-  /bin/bash "${SCRIPT}"
+  info "Executing ${SCRIPT} ..."
+  # /bin/bash "${SCRIPT}"
+  # shellcheck source=/dev/null
+  source "${SCRIPT}"
   echo
 done
 

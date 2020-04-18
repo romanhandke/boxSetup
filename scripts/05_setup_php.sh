@@ -3,33 +3,38 @@
 ################################################################################
                          
 #                        File Name     :  
-#                        Creation Date : 13.04.2020
-#                        Last Modified : Sa 18 Apr 2020 17:31:24 CEST
+#                        Creation Date : 18.04.2020
+#                        Last Modified : Sa 18 Apr 2020 17:53:17 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
 
                               ##### PURPOSE #####
 
-                   # Install packages that are always needed
+                          # Install PHP 7.4 + Modules
+
 
 ################################################################################
 
-                             ##### VARIABLES #####
+                             ##### VARIABLES ######
 
-# List of packages
-STANDARD_PACKAGES=( \
+PHP_MODULES=( \
   curl \
-  wget \
-  tree \
-  bat \
-  fd-find \
-  ripgrep \
-  software-properties-common \
+  mbstring \
+  PDO \
+  tokenizer \
+  zip \
 )
 
 ################################################################################
 
-                               ##### SCRIPT #####
+# Add Repository
+add-apt-repository ppa:ondrej/php -y || error "Could not add PHP 7.4 repository"
 
-installPackages "${STANDARD_PACKAGES[@]}"
+# Update Repositories
+apt update
+
+# Install PHP 7.4
+installPackage php7.4
+
+installPackages "${PHP_MODULES[@]}"
