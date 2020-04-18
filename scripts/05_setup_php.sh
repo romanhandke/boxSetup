@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:08:03 CEST
+#                        Last Modified : Sa 18 Apr 2020 18:14:59 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -20,6 +20,7 @@
 
 PHP_MODULES=( \
   composer
+  php7.4
   php7.4-curl \
   php7.4-mbstring \
   php7.4-PDO \
@@ -29,14 +30,5 @@ PHP_MODULES=( \
 
 ################################################################################
 
-# Add Repository
-add-apt-repository ppa:ondrej/php -y || error "Could not add PHP 7.4 repository"
-
-# Update Repositories
-apt update
-
 # Install PHP 7.4
-installPackage php7.4
-
-# Install PHP 7.4 Modules
 installPackages "${PHP_MODULES[@]}"
