@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:30:08 CEST
+                        Last Modified : Sa 18 Apr 2020 18:46:40 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -30,6 +30,7 @@ info() {
 }
 
 installPackage() {
+  info "Installing ${1}"
   apt install -y "${1}" &> /dev/null || error "Could not install ${1}"
 }
 
@@ -37,7 +38,7 @@ installPackages() {
   PACKAGE_ARRAY=("${@}")
   for PACKAGE in "${PACKAGE_ARRAY[@]}"
   do
-    info "Installing ${PACKAGE} ..."
+    info "Installing ${PACKAGE}"
     apt install -y "${PACKAGE}" &> /dev/null || error "Could not install ${PACKAGE}"
   done
 }
