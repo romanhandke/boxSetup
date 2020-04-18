@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:10:13 CEST
+#                        Last Modified : Sa 18 Apr 2020 18:23:58 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -22,11 +22,11 @@ usage() {
 }
 
 error() {
-  echo -e "\e[1;31m[error]\e[0m ${1}"
+  echo -e " \e[1;31m[error]\e[0m ${1}"
 }
 
 info() {
-  echo -e "\e[1;33m[info]\e[0m ${1}"
+  echo -e " \e[1;33m[info]\e[0m ${1}"
 }
 
 installPackage() {
@@ -44,4 +44,8 @@ installPackages() {
 
 copyFileHome() {
   cp "${1}" "$USERHOME" || error "Could not copy ${1}"
+}
+
+setupStep() {
+  echo -e "\e[32m[install]\e[0m ${1}"
 }
