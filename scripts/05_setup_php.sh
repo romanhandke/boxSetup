@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:14:59 CEST
+#                        Last Modified : Sa 18 Apr 2020 18:34:51 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -19,8 +19,8 @@
                              ##### VARIABLES ######
 
 PHP_MODULES=( \
-  composer
-  php7.4
+  composer \
+  php7.4 \
   php7.4-curl \
   php7.4-mbstring \
   php7.4-PDO \
@@ -30,5 +30,10 @@ PHP_MODULES=( \
 
 ################################################################################
 
-# Install PHP 7.4
+##### SCRIPT #####
+
+addRepository "ppa:ondrej/php"
+
+updateRepositories
+
 installPackages "${PHP_MODULES[@]}"
