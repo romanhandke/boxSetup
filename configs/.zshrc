@@ -7,6 +7,8 @@ export BAT_CONFIG_PATH="${HOME}/boxSetup/configs/.bat.conf"
 export BAT_THEME="${HOME}/boxSetup/configs/assets/Nord.tmTheme"
 export VISUAL=vim
 export EDITOR="${VISUAL}"
+export TERM=screen-256color
+export COLORTERM=truecolor
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
