@@ -30,8 +30,6 @@ source "${HOME}/boxSetup/configs/.fzf.conf"
 
 alias gb="git branch | fzf"
 
-ssh-add .ssh/id_ed25519
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
