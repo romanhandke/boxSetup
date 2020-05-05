@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 19:00:35 CEST
+#                        Last Modified : Di 05 Mai 2020 18:13:13 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -60,4 +60,9 @@ addRepository() {
 updateRepositories() {
   info "Updating repositories"
   apt update &> /dev/null || error "Could not update repositories"
+}
+
+reinitializeShell() {
+  . ~/.profile
+  . ~/.zshrc
 }

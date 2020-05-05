@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Sa 18 Apr 2020 18:53:56 CEST
+#                        Last Modified : Di 05 Mai 2020 18:28:39 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -38,6 +38,8 @@ installPackage zsh
 # Set zsh as default shell for the user with UID 1000
 info "Changing shell"
 chsh --shell /bin/zsh "${USERNAME}" || error "Could not change shell"
+
+reinitializeShell
 
 # Install OhMyZsh
 info "Installing OhMyZsh"
