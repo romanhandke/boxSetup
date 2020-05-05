@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Di 05 Mai 2020 19:19:41 CEST
+#                        Last Modified : Di 05 Mai 2020 19:26:32 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -63,6 +63,6 @@ updateRepositories() {
 }
 
 reinitializeShell() {
-  su - "{USERNAME}" -c ". ~/.profile"
-  su - "{USERNAME}" -c ". ~/.zshrc"
+  su - "${USERNAME}" -c ". ~/.profile"
+  su - "${USERNAME}" -c ". ~/.zshrc"
 }
