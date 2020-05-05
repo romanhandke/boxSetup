@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Di 05 Mai 2020 20:07:21 CEST
+#                        Last Modified : Di 05 Mai 2020 20:19:56 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -28,6 +28,7 @@ STANDARD_PACKAGES=( \
   shellcheck \
   software-properties-common \
 )
+WORKIN_DIRECTORY=$(pwd)
 
 ################################################################################
 
@@ -35,8 +36,10 @@ STANDARD_PACKAGES=( \
 
 installRipGrep() {
   info "Installing ripgrep"
+  cd /tmp &> /dev/null || error "Could not switch to /tmp directory"
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb /tmp &> /dev/null || error "Could not download ripgrep"
-  dpkg -i /tmp/ripgrep_11.0.2_amd64.deb &> /dev/null || error "Could not install ripgrep"
+  dpkg -i ripgrep_11.0.2_amd64.deb &> /dev/null || error "Could not install ripgrep"
+  cd "${USERHOME}" || error "Could not switch to ${USERHOME}"
 }
 
 ################################################################################
