@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Di 05 Mai 2020 18:28:39 CEST
+#                        Last Modified : Di 05 Mai 2020 19:47:04 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -39,12 +39,18 @@ installPackage zsh
 info "Changing shell"
 chsh --shell /bin/zsh "${USERNAME}" || error "Could not change shell"
 
-reinitializeShell
-
 # Install OhMyZsh
 info "Installing OhMyZsh"
 su - "${USERNAME}" -c "sh -c $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended" &> /dev/null \
   || error "Could not install OhMyZsh"
+
+# Install zsh-syntax-highlighting
+info "Installing zsh-syntax-highlighting"
+su - "${USERNAME}" -c "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${USERHOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" &> /dev/null || error "Could not install zsh-syntax-highlighting"
+
+# Install zsh-autosuggestions
+info "Installing zsh-autosuggestions"
+su - "${USERNAME}" -c "git clone https://github.com/zsh-users/zsh-autosuggestions ${USERHOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" &> /dev/null || error "Could not install zsh-autosuggestions"
 
 # Install recommended fonts
 info "Installing fonts"
@@ -52,6 +58,8 @@ for FONT in "${FONT_URLS[@]}"
 do
   su - "${USERNAME}" -c "wget '${FONT}' -P /home/${USERNAME}/.local/share/fonts/" &> /dev/null || error "Could not install ${FONT}"
 done
+
+reinitializeShell
 
 # Install PowerLevel10k theme
 info "Installing PowerLevel10k theme"
