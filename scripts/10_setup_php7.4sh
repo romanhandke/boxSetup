@@ -19,11 +19,10 @@
                              ##### VARIABLES ######
 
 PHP_MODULES=( \
-  composer \
   php7.4 \
   php7.4-curl \
   php7.4-mbstring \
-  php7.4-PDO \
+  php7.4-mysql \
   php7.4-tokenizer \
   php7.4-zip \
   php7.4-xml \
