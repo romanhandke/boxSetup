@@ -4,7 +4,7 @@
                          
 #                        File Name     :  
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Sa 18 Apr 2020 19:16:00 CEST
+#                        Last Modified : Di 05 Mai 2020 19:52:03 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -17,7 +17,6 @@
 
                                ##### SCRIPT #####
 
-info "Installing Composer"
 installPackage "composer"
 
 info "Installing PsyShell"
