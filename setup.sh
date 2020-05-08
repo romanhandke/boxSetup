@@ -4,7 +4,7 @@
                          
 #                        File Name     : setup.sh
 #                        Creation Date : 13.04.2020
-#                        Last Modified : Sa 18 Apr 2020 19:10:46 CEST
+#                        Last Modified : Fr 08 Mai 2020 16:34:25 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -19,6 +19,7 @@
 
 USERNAME=$(grep 1000 /etc/passwd | awk 'BEGIN { FS = ":" } { print $1 }')
 export USERHOME="/home/${USERNAME}/"
+ACTIVE_SCRIPTS_DIRECTORY="./scripts/active/"
 
 ###############################################################################
 
@@ -50,7 +51,7 @@ updateRepositories
 echo
 
 # Execute installation scripts
-for SCRIPT in ./scripts/*
+for SCRIPT in ${ACTIVE_SCRIPTS_DIRECTORY}*
 do
   setupStep "Executing ${SCRIPT}"
   # shellcheck source=/dev/null
