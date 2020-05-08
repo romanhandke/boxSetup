@@ -4,7 +4,7 @@
                          
 #                        File Name     : 11_setup_php_utils.sh
 #                        Creation Date : 18.04.2020
-#                        Last Modified : Fr 08 Mai 2020 16:03:31 CEST
+#                        Last Modified : Fr 08 Mai 2020 17:14:45 CEST
 #                        Created By    : roman handke
                         
 ################################################################################
@@ -38,8 +38,7 @@ COMPOSER_MODULES=( \
 
 installPackage "composer"
 
-info "Installing global composer modules"
-
+info "Installing php code quality tools"
 for MODULE in "${COMPOSER_MODULES[@]}"
 do
   installGlobalComposerModules "${MODULE}"
